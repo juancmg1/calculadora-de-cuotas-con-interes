@@ -1,8 +1,41 @@
 
 
-let valor = parseFloat(prompt("Ingresa el valor"));
-let tarjeta = prompt("¿Tu tarjeta es Visa, Master o Amex?");
-let cuotas = parseInt(prompt("Cantidad de cuotas"));
+let valor;
+while (true) {
+  let input = prompt("Ingresa el valor");
+  if (input !== null && input.trim() !== "") {
+    valor = parseFloat(input);
+    if (!isNaN(valor)) {
+      break;
+    }
+  }
+  alert("Debes ingresar un valor numérico válido.");
+}
+
+let tarjeta;
+while (true) {
+  tarjeta = prompt("¿Tu tarjeta es Visa, Master o Amex?");
+  if (tarjeta !== null && tarjeta.trim() !== "") {
+    // Puedes agregar más validaciones aquí si es necesario
+    break;
+  }
+  alert("Debes seleccionar una tarjeta.");
+}
+
+let cuotas;
+while (true) {
+  let input = prompt("Cantidad de cuotas");
+  if (input !== null && input.trim() !== "") {
+    cuotas = parseInt(input);
+    if (!isNaN(cuotas)) {
+      break;
+    }
+  }
+  alert("Debes ingresar un número de cuotas válido.");
+}
+
+// Ahora puedes usar las variables valor, tarjeta y cuotas en tu código
+
 
 switch (tarjeta) {
     case "visa":
